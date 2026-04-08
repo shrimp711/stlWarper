@@ -1,0 +1,218 @@
+{
+  "PLA_190_40_25": {
+    "material": "PLA",
+    "t_melt": 190,
+    "t_bed": 40,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.020671641726592537
+    ],
+    "status": "success"
+  },
+  "PLA_190_60_25": {
+    "material": "PLA",
+    "t_melt": 190,
+    "t_bed": 60,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.021127983937780117
+    ],
+    "status": "success"
+  },
+  "PLA_210_40_25": {
+    "material": "PLA",
+    "t_melt": 210,
+    "t_bed": 40,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.023033837569592885
+    ],
+    "status": "success"
+  },
+  "PLA_210_60_25": {
+    "material": "PLA",
+    "t_melt": 210,
+    "t_bed": 60,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.023484942378487143
+    ],
+    "status": "success"
+  },
+  "PLA_230_40_25": {
+    "material": "PLA",
+    "t_melt": 230,
+    "t_bed": 40,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.025392153226503483
+    ],
+    "status": "success"
+  },
+  "PLA_230_60_25": {
+    "material": "PLA",
+    "t_melt": 230,
+    "t_bed": 60,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.02583806768924118
+    ],
+    "status": "success"
+  },
+  "ABS_230_90_25": {
+    "material": "ABS",
+    "t_melt": 230,
+    "t_bed": 90,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.03836708861665685
+    ],
+    "status": "success"
+  },
+  "ABS_230_90_60": {
+    "material": "ABS",
+    "t_melt": 230,
+    "t_bed": 90,
+    "t_chamber": 60,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.03836715249921083
+    ],
+    "status": "success"
+  },
+  "ABS_230_110_25": {
+    "material": "ABS",
+    "t_melt": 230,
+    "t_bed": 110,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.039132383487070536
+    ],
+    "status": "success"
+  },
+  "ABS_230_110_60": {
+    "material": "ABS",
+    "t_melt": 230,
+    "t_bed": 110,
+    "t_chamber": 60,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.0391324479035737
+    ],
+    "status": "success"
+  },
+  "ABS_250_90_25": {
+    "material": "ABS",
+    "t_melt": 250,
+    "t_bed": 90,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.04167775079419434
+    ],
+    "status": "success"
+  },
+  "ABS_250_90_60": {
+    "material": "ABS",
+    "t_melt": 250,
+    "t_bed": 90,
+    "t_chamber": 60,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.041677814644521055
+    ],
+    "status": "success"
+  },
+  "ABS_250_110_25": {
+    "material": "ABS",
+    "t_melt": 250,
+    "t_bed": 110,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.04243649115201063
+    ],
+    "status": "success"
+  },
+  "ABS_250_110_60": {
+    "material": "ABS",
+    "t_melt": 250,
+    "t_bed": 110,
+    "t_chamber": 60,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.04243655553508524
+    ],
+    "status": "success"
+  },
+  "ABS_270_90_25": {
+    "material": "ABS",
+    "t_melt": 270,
+    "t_bed": 90,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.044972947639825664
+    ],
+    "status": "success"
+  },
+  "ABS_270_90_60": {
+    "material": "ABS",
+    "t_melt": 270,
+    "t_bed": 90,
+    "t_chamber": 60,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.04497301145817384
+    ],
+    "status": "success"
+  },
+  "ABS_270_110_25": {
+    "material": "ABS",
+    "t_melt": 270,
+    "t_bed": 110,
+    "t_chamber": 25,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.045731776667700015
+    ],
+    "status": "success"
+  },
+  "ABS_270_110_60": {
+    "material": "ABS",
+    "t_melt": 270,
+    "t_bed": 110,
+    "t_chamber": 60,
+    "inherent_strain": [
+      1.734723475976807e-16,
+      1.734723475976807e-16,
+      0.04573184048738609
+    ],
+    "status": "success"
+  }
+}
