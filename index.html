@@ -15,58 +15,74 @@
   </script>
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <h1>STLwarp 一键补偿工具</h1>
-      <p class="subtitle">上传 STL -> 选择材料 -> 自动变形补偿 -> 下载新 STL</p>
-    </div>
-    <span class="chip">纯前端本地运行</span>
-  </header>
-
-  <main class="layout">
-    <section class="panel controls">
-      <h2>参数</h2>
-
-      <label class="field">
-        <span>1. 上传 STL</span>
-        <input id="stlInput" type="file" accept=".stl" />
-      </label>
-
-      <label class="field">
-        <span>2. 选择材料</span>
-        <select id="materialSelect"></select>
-      </label>
-
-      <label class="field">
-        <span>工艺预设</span>
-        <select id="presetSelect"></select>
-      </label>
-
-      <div class="preset-card" id="presetCard">
-        <p><strong>喷嘴温度:</strong> <span id="nozzleValue">-</span> C</p>
-        <p><strong>热床温度:</strong> <span id="bedValue">-</span> C</p>
-        <p><strong>腔体温度:</strong> <span id="chamberValue">-</span> C</p>
-        <p><strong>固有形变:</strong> <span id="strainValue">-</span></p>
+  <div class="app-shell">
+    <header class="app-topbar">
+      <div class="brand-wrap">
+        <div class="logo-pill">B</div>
+        <div>
+          <h1>stlWarper</h1>
+          <p class="brand-sub">FDM 热变形预补偿工具</p>
+        </div>
       </div>
-
-      <button id="runButton" class="primary" disabled>3. 一键补偿并下载</button>
-      <p class="hint">提示: 首次打开请使用本地静态服务启动，避免浏览器拦截 JSON 读取。</p>
-      <p id="status" class="status">等待加载 database.json ...</p>
-    </section>
-
-    <section class="panel viewer-wrap">
-      <h2>模型预览</h2>
-      <div id="viewer" class="viewer"></div>
-      <div class="legend">
-        <span><i class="dot before"></i>原始模型</span>
-        <span><i class="dot after"></i>补偿后模型</span>
+      <div class="top-actions">
+        <select id="languageSelect" class="lang-select" aria-label="language switch">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+        </select>
+        <label class="mini-upload">
+          <input id="stlInput" type="file" accept=".stl" />
+          <span id="uploadLabel">Upload STL</span>
+        </label>
+        <span class="file-chip" id="modelName">double_cantilever_default.stl</span>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <footer class="footer">
-    数据源: material-db/database.json · 所有计算均在本地浏览器执行。
-  </footer>
+    <main class="workspace">
+      <section class="viewport-wrap">
+        <div id="viewer" class="viewer"></div>
+        <div class="legend-float">
+          <span id="legendOriginal"><i class="dot before"></i>原始模型</span>
+          <span id="legendCompensated"><i class="dot after"></i>补偿后模型</span>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <section class="tool-block">
+          <h2 id="compensationTitle">COMPENSATION</h2>
+
+          <label class="field">
+            <span id="materialLabel">Material</span>
+            <select id="materialSelect"></select>
+          </label>
+
+          <label class="field">
+            <span id="presetLabel">Process Preset</span>
+            <select id="presetSelect"></select>
+          </label>
+
+          <div class="preset-card" id="presetCard">
+            <p><strong id="nozzleLabel">喷嘴温度:</strong> <span id="nozzleValue">-</span> °C</p>
+            <p><strong id="bedLabel">热床温度:</strong> <span id="bedValue">-</span> °C</p>
+            <p><strong id="chamberLabel">腔体温度:</strong> <span id="chamberValue">-</span> °C</p>
+            <p><strong id="strainLabel">固有应变:</strong> <span id="strainValue">-</span></p>
+          </div>
+        </section>
+
+        <section class="tool-block export-block">
+          <h2 id="exportTitle">EXPORT</h2>
+          <button id="runButton" class="primary" disabled>一键补偿并下载 STL</button>
+          <p id="status" class="status">等待加载 database.json ...</p>
+          <p class="hint" id="privacyHint">所有计算在本地浏览器完成，不上传模型文件。</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="statusbar">
+      <div class="status-left" id="modelStats">0 triangles · 0.00 × 0.00 × 0.00 mm</div>
+      <div class="status-center" id="statusCenter">Data: material-db/database.json</div>
+      <div class="status-right" id="statusRight">左键旋转 · 右键平移 · 滚轮缩放 · X/Y/Z 旋转 · Shift+X/Y/Z 反向 · R 默认朝向</div>
+    </footer>
+  </div>
 
   <script type="module" src="./js/app.js"></script>
 </body>

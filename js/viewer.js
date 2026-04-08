@@ -8,6 +8,7 @@ const state = {
   controls: null,
   originalMesh: null,
   compensatedMesh: null,
+  buildPlate: null,
   container: null,
 };
 
@@ -49,6 +50,8 @@ export function initViewer(container) {
   const height = Math.max(container.clientHeight, 10);
 
   state.camera = new THREE.PerspectiveCamera(46, width / height, 0.01, 1000);
+  // Use Z-up to match STL compensation coordinates and build-plate convention.
+  state.camera.up.set(0, 0, 1);
   state.camera.position.set(120, 90, 130);
 
   state.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
@@ -72,8 +75,22 @@ export function initViewer(container) {
   state.scene.add(fill);
 
   const grid = new THREE.GridHelper(240, 24, 0x95abb5, 0xc9d9df);
-  grid.position.y = 0;
+  // GridHelper defaults to XZ@Y=0; rotate to XY so it represents Z=0 build plate.
+  grid.rotation.x = Math.PI * 0.5;
+  grid.position.z = 0;
   state.scene.add(grid);
+
+  const buildPlateGeom = new THREE.PlaneGeometry(240, 240, 1, 1);
+  const buildPlateMat = new THREE.MeshBasicMaterial({
+    color: 0x7ba8c8,
+    transparent: true,
+    opacity: 0.14,
+    depthWrite: false,
+    side: THREE.DoubleSide,
+  });
+  state.buildPlate = new THREE.Mesh(buildPlateGeom, buildPlateMat);
+  state.buildPlate.position.z = -0.02;
+  state.scene.add(state.buildPlate);
 
   window.addEventListener('resize', onResize);
 
